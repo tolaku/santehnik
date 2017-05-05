@@ -1,6 +1,8 @@
 <?php 
 defined('PLUMBER') or die('Разве хорошо воровать?');
 
+
+
 //####### Обработчик заказ-звонка #########//
 function clear($var){
 	$var = strip_tags(trim($var));

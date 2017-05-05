@@ -2,3 +2,9 @@ AddDefaultCharset utf-8
 php_flag magic_quotes_gpc off
 ErrorDocument 404 /?view=404
 #DirectoryIndex stop.php
+
+
+
+
+
+#1. Создание БД mysql / constants
