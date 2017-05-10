@@ -24,7 +24,7 @@
 
 </head>
 <body>
-	
+	<?php print_arr(constant('heder_telefon')); ?>
 	<!-- preloader -->
 	<div class="preloader"></div>
 

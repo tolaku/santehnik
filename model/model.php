@@ -1,6 +1,15 @@
 <?php 
 defined('PLUMBER') or die('Разве хорошо воровать?');
 
+/* выводим значения из constant */
+function constant($string){
+	global $db;
+	$query = "SELECT text FROM constants WHERE name = '$string'";
+	$result = mysqli_query($db, $query) or die(mysql_error());
+
+	$string = mysqli_fetch_assoc($result);
+	return $string;
+}
 
 
 //####### Обработчик заказ-звонка #########//

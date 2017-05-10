@@ -1,4 +1,5 @@
 AddDefaultCharset utf-8
+php_flag display_errors 1
 php_flag magic_quotes_gpc off
 ErrorDocument 404 /?view=404
 #DirectoryIndex stop.php
@@ -7,4 +8,4 @@ ErrorDocument 404 /?view=404
 
 
 
-#1. Создание БД mysql / constants
+#1. Выводим данные из БД constants на сайт header

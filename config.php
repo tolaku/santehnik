@@ -24,6 +24,6 @@ define('PASS_BD', '123'); // пароль БД
 define('NAME_BD', 'santehnikpro'); // имя БД
 
 $db = mysqli_connect(HOST, USER_BD, PASS_BD) or die('Нет подключение к серверу!');
-mysqli_select_db($db, NAME_BD) or die('Подключение к БД');
+mysqli_select_db($db, NAME_BD) or die('Нет подключения к БД');
 mysqli_query($db, "SET NAMES 'UTF8'") or die('Кодировка не подключена!');
 ?>
