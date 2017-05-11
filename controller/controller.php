@@ -11,7 +11,7 @@ require_once 'functions/functions.php';
 $view = empty($_GET['view']) ? 'page' : $_GET['view'];
 
 // выводим header_contact
-constant($string);
+//constant($string);
 
 // проверяем на какой странице мы находимся через $view
 switch ($view) {

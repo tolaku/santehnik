@@ -24,7 +24,6 @@
 
 </head>
 <body>
-	<?php print_arr(constant('heder_telefon')); ?>
 	<!-- preloader -->
 	<div class="preloader"></div>
 
@@ -34,8 +33,8 @@
 			<div class="row">
 				<div class="contact-info pull-right">
 					<ul>
-						<li><a href="tel:+375444540444" class="hvr-bounce-to-bottom"><i class="fa fa-phone"></i> (44) 454-04-44 </a></li>
-						<li><a href="mailto:santehkostya@mail.ru" class="hvr-bounce-to-bottom"><i class="fa fa-envelope-o"></i> santehkostya@mail.ru</a></li>
+					<!-- Выводим телефон и email -->
+					<?php $str = constants('heder_telefon'); echo $str['text'] ?>
 					</ul>
 				</div> <!-- /.contact-info -->
 			</div>

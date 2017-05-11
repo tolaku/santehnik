@@ -2,15 +2,14 @@
 defined('PLUMBER') or die('Разве хорошо воровать?');
 
 /* выводим значения из constant */
-function constant($string){
+function constants($str){
 	global $db;
-	$query = "SELECT text FROM constants WHERE name = '$string'";
+	$query = "SELECT text FROM constants WHERE name = 'heder_telefon'";
 	$result = mysqli_query($db, $query) or die(mysql_error());
 
 	$string = mysqli_fetch_assoc($result);
 	return $string;
 }
-
 
 //####### Обработчик заказ-звонка #########//
 function clear($var){
