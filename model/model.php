@@ -4,7 +4,7 @@ defined('PLUMBER') or die('Разве хорошо воровать?');
 /* выводим значения из constant */
 function constants($str){
 	global $db;
-	$query = "SELECT text FROM constants WHERE name = 'heder_telefon'";
+	$query = "SELECT text FROM constants WHERE name = '$str'";
 	$result = mysqli_query($db, $query) or die(mysql_error());
 
 	$string = mysqli_fetch_assoc($result);
