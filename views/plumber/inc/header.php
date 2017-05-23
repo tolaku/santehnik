@@ -24,6 +24,7 @@
 
 </head>
 <body>
+<?php print_arr($page); ?>
 	<!-- preloader -->
 	<div class="preloader"></div>
 
@@ -75,6 +76,23 @@
 						<i class="fa fa-bars"></i>
 					</button>
 					<ul class="mainmenu pull-right">
+					
+					<!-- Выводим навигацию -->
+						<?php foreach($page as $key => $item): ?>
+							<li class="dropdown">
+								<a href="?view=about" class="hvr-overline-from-left">О нас</a>
+								<ul class="submenu">
+									<li><a href="?view=team">Наш коллектив</a></li>
+									<li class="dropdown"><a href="?view=testimonials-v1">Отзывы</a>
+										<ul class="submenu">
+											<li><a href="?view=testimonials-v1">Отзывы V1</a></li>
+											<li><a href="?view=testimonials-v2">Отзывы V2</a></li>
+										</ul>
+									</li>
+									<li><a href="?view=faq">Вопрос-ответ</a></li>
+								</ul>
+							</li>
+						<?php endforeach; ?>
 
 					<!-- Главная -->
 					<?php if($view == 'page'):?>

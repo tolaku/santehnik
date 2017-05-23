@@ -11,6 +11,23 @@ function constants($str){
 	return $string;
 }
 
+/* выводим страницы */
+function pages(){
+	global $db;
+	$query = "SELECT * FROM pages ORDER BY parent_id, name";
+	$result = mysqli_query($db, $query) or die(mysql_query(query));
+
+	$page = array();
+	while($row = mysqli_fetch_assoc($result)){
+		if(!$row['parent_id']){
+			$page[$row['id']][] = $row['name'];
+		}else{
+			$page[$row['parent_id']]['sub'][$row['id']] = $row['name'];
+		}
+	}
+	return $page;
+}
+
 //####### Обработчик заказ-звонка #########//
 function clear($var){
 	$var = strip_tags(trim($var));
