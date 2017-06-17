@@ -23,8 +23,8 @@
 
 
 </head>
-<body>
 <?php print_arr($page); ?>
+<body>
 	<!-- preloader -->
 	<div class="preloader"></div>
 
@@ -79,75 +79,20 @@
 					
 					<!-- Выводим навигацию -->
 						<?php foreach($page as $key => $item): ?>
-							<li class="dropdown">
-								<a href="?view=about" class="hvr-overline-from-left">О нас</a>
+							<?php if(count($item) == 1): ?> <!-- <li class="current"> -->
+								<li><a href="?view=about" class="hvr-overline-from-left"><?=$item[0]?></a></li>
+							<?php endif; ?>
+							<?php if(count($item) > 1): ?>
+							<li>
+								<a href="?view=about" class="hvr-overline-from-left"><?=$item[0]?></a>
 								<ul class="submenu">
-									<li><a href="?view=team">Наш коллектив</a></li>
-									<li class="dropdown"><a href="?view=testimonials-v1">Отзывы</a>
-										<ul class="submenu">
-											<li><a href="?view=testimonials-v1">Отзывы V1</a></li>
-											<li><a href="?view=testimonials-v2">Отзывы V2</a></li>
-										</ul>
-									</li>
-									<li><a href="?view=faq">Вопрос-ответ</a></li>
+									<li><a href="?view=uslugi&amp;id=1">Наш коллектив</a></li>
+									<li><a href="?view=uslugi&amp;id=1">Вопрос-ответ</a></li>
 								</ul>
 							</li>
+							<?php endif; ?>
 						<?php endforeach; ?>
 
-					<!-- Главная -->
-					<?php if($view == 'page'):?>
-						<li class="current">
-					<?php else:?>
-						<li>
-					<?php endif; ?>
-							<a href="/" class="hvr-overline-from-left">Главная</a></li>
-					<!-- #Главная -->
-
-					<!-- О нас -->
-					<?php if($view == 'about'):?>
-						<li class="dropdown current">
-					<?php else:?>
-						<li class="dropdown">
-					<?php endif; ?>
-							<a href="?view=about" class="hvr-overline-from-left">О нас</a>
-							<ul class="submenu">
-								<li><a href="?view=team">Наш коллектив</a></li>
-								<li class="dropdown"><a href="?view=testimonials-v1">Отзывы</a>
-									<ul class="submenu">
-										<li><a href="?view=testimonials-v1">Отзывы V1</a></li>
-										<li><a href="?view=testimonials-v2">Отзывы V2</a></li>
-									</ul>
-								</li>
-								<li><a href="?view=faq">Вопрос-ответ</a></li>
-							</ul>
-						</li>
-					<!-- #О нас -->
-
-					<!-- Услуги -->	
-					<?php if($view == 'project'):?>
-						<li class="dropdown current">
-					<?php else:?>
-						<li class="dropdown">
-					<?php endif; ?>
-							<a href="?view=project" class="hvr-overline-from-left">Услуги</a>
-							<ul class="submenu">
-								<li><a href="?view=uslugi&amp;id=1">Отопление</a></li>
-								<li><a href="?view=uslugi&amp;id=2">Водоснабжение</a></li>
-								<li><a href="?view=uslugi&amp;id=3">Канализация</a></li>
-								<li><a href="?view=uslugi&amp;id=4">Сантех-посуда</a></li>
-								<li><a href="?view=uslugi&amp;id=5">Сантех-оборудование</a></li>
-							</ul>
-							</li>
-					<!-- #Услуги -->	
-
-					<!-- Контакты -->
-					<?php if($view == 'contact'):?>
-						<li class="current">
-					<?php else:?>
-						<li>
-					<?php endif; ?>
-						<a href="?view=contact" class="hvr-overline-from-left">Контакты</a></li>
-					<!-- #Контакты -->
 					</ul>
 				</nav>
 			</div>

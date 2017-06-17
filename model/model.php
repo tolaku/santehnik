@@ -14,7 +14,7 @@ function constants($str){
 /* выводим страницы */
 function pages(){
 	global $db;
-	$query = "SELECT * FROM pages ORDER BY parent_id, name";
+	$query = "SELECT * FROM pages ORDER BY position, parent_id, name";
 	$result = mysqli_query($db, $query) or die(mysql_query(query));
 
 	$page = array();
