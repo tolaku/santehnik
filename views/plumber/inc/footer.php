@@ -72,7 +72,7 @@
 			<div class="row">
 				<!-- .copyright -->
 				<div class="copyright pull-left">
-					<p>Авторские права &copy; Santehnikpro.by <?=date(Y)?>. Все права защищены. </p>
+					<p>Авторские права &copy; Santehnikpro.by <?php echo date('Y'
 				</div> <!-- /.copyright -->
 				<!-- .credit -->
 				<div class="credit pull-right">

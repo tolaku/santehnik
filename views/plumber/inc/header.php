@@ -23,7 +23,6 @@
 
 
 </head>
-<?php print_arr($page); ?>
 <body>
 	<!-- preloader -->
 	<div class="preloader"></div>
@@ -79,15 +78,16 @@
 					
 					<!-- Выводим навигацию -->
 						<?php foreach($page as $key => $item): ?>
-							<?php if(count($item) == 1): ?> <!-- <li class="current"> -->
-								<li><a href="?view=about" class="hvr-overline-from-left"><?=$item[0]?></a></li>
+							<?php if(count($item) == 2): ?> <!-- <li class="current"> -->
+								<li><a href="?view=<?=$item[1]?>" class="hvr-overline-from-left"><?=$item[0]?></a></li>
 							<?php endif; ?>
-							<?php if(count($item) > 1): ?>
+							<?php if(count($item) > 2): ?>
 							<li>
-								<a href="?view=about" class="hvr-overline-from-left"><?=$item[0]?></a>
+								<a href="?view=<?=$item[1]?>" class="hvr-overline-from-left"><?=$item[0]?></a>
 								<ul class="submenu">
-									<li><a href="?view=uslugi&amp;id=1">Наш коллектив</a></li>
-									<li><a href="?view=uslugi&amp;id=1">Вопрос-ответ</a></li>
+								<?php foreach($item['sub'] as $key => $sub): ?>
+									<li><a href="?view=uslugi&amp;id=<?=$key?>"><?=$sub?></a></li>
+								<?php endforeach; ?>
 								</ul>
 							</li>
 							<?php endif; ?>
