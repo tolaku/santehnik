@@ -1,4 +1,6 @@
 <?php defined('PLUMBER') or die('Разве хорошо воровать?');?>
+<?php print_arr($slider_1); ?>
+<?php print_arr($slider_2); ?>
 		<!-- #banner -->
 	<section id="banner">
 		<div class="banner-container">
@@ -13,7 +15,7 @@
 						data-title="EXPERTISE YOU CAN TRUST">
 						
 						<img 
-							src="<?=TEMPLATE?>img/slides/image1.jpg" 
+							src="<?=TEMPLATE?><?php echo $slider_1['img']; ?>" 
 							data-bgrepeat="no-repeat" 
 							data-bgfit="cover" 
 							data-bgposition="top center"

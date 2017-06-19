@@ -72,7 +72,7 @@
 			<div class="row">
 				<!-- .copyright -->
 				<div class="copyright pull-left">
-					<p>Авторские права &copy; Santehnikpro.by <?php echo date('Y'
+					<p>Авторские права &copy; Santehnikpro.by <?=date('Y')?></p>
 				</div> <!-- /.copyright -->
 				<!-- .credit -->
 				<div class="credit pull-right">
@@ -87,7 +87,6 @@
 	<script src="<?=TEMPLATE?>js/jquery.min.js"></script> <!-- jQuery JS -->
 	<script src="<?=TEMPLATE?>js/bootstrap.min.js"></script> <!-- BootStrap JS -->
 	<script src="http://maps.google.com/maps/api/js"></script> <!-- Gmap Helper -->
-	<!--<script src="js/maps.js"></script>  Gmap Helper -->
 	<script src="<?=TEMPLATE?>js/gmap.js"></script> <!-- gmap JS -->
 	<script src="<?=TEMPLATE?>js/wow.js"></script> <!-- WOW JS -->
 	<script src="<?=TEMPLATE?>js/isotope.pkgd.min.js"></script> <!-- iSotope JS -->

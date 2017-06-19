@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Июн 17 2017 г., 15:05
--- Версия сервера: 5.7.18-0ubuntu0.16.04.1
--- Версия PHP: 7.0.15-0ubuntu0.16.04.4
+-- Хост: 127.0.0.1
+-- Время создания: Июн 19 2017 г., 17:52
+-- Версия сервера: 5.5.25
+-- Версия PHP: 5.3.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- База данных: `santehnikpro`
@@ -26,12 +26,13 @@ SET time_zone = "+00:00";
 -- Структура таблицы `constants`
 --
 
-CREATE TABLE `constants` (
-  `id` int(3) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `constants` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `text` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `text` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Дамп данных таблицы `constants`
@@ -46,13 +47,14 @@ INSERT INTO `constants` (`id`, `title`, `name`, `text`) VALUES
 -- Структура таблицы `pages`
 --
 
-CREATE TABLE `pages` (
-  `id` int(3) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `pages` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `url_page` varchar(255) NOT NULL,
   `position` int(3) NOT NULL,
-  `parent_id` int(3) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `parent_id` int(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `pages`
@@ -68,36 +70,29 @@ INSERT INTO `pages` (`id`, `name`, `url_page`, `position`, `parent_id`) VALUES
 (7, 'Канализация', 'uslugi', 1, 3),
 (8, 'Сантех-посуда', 'uslugi', 1, 3);
 
---
--- Индексы сохранённых таблиц
---
+-- --------------------------------------------------------
 
 --
--- Индексы таблицы `constants`
---
-ALTER TABLE `constants`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `pages`
---
-ALTER TABLE `pages`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
+-- Структура таблицы `slider_home`
 --
 
+CREATE TABLE IF NOT EXISTS `slider_home` (
+  `id` int(1) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
 --
--- AUTO_INCREMENT для таблицы `constants`
+-- Дамп данных таблицы `slider_home`
 --
-ALTER TABLE `constants`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT для таблицы `pages`
---
-ALTER TABLE `pages`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+INSERT INTO `slider_home` (`id`, `name`, `img`, `text`) VALUES
+(1, 'Ключ в руке (слайдер 1)', 'img/slides/image1.jpg', 'Качество и гарантия'),
+(2, 'Кран в руке (слайдер 2)', 'img/slides/image2.jpg', 'Справимся с поставленной задачей'),
+(3, 'Ванне с краном (слайдер 3)', 'img/slides/image3.jpg', 'Наша работа');
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

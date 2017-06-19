@@ -11,7 +11,7 @@ function constants($str){
 	return $string;
 }
 
-/* выводим страницы */
+/* выводим страницы в header */
 function pages(){
 	global $db;
 	$query = "SELECT * FROM pages ORDER BY position, parent_id, name";
@@ -28,6 +28,19 @@ function pages(){
 	}
 	return $page;
 }
+
+/* выводим слайдера на странице home */
+function sliderHome($slider){
+	global $db;
+	$query = "SELECT * FROM slider_home WHERE id = $slider";
+	$result = mysqli_query($db, $query);
+
+	$sliderHome = array();
+	$sliderHome[] = mysqli_fetch_assoc($result);
+
+	return $sliderHome; 
+}
+/* :выводим слайдера на странице home */
 
 //####### Обработчик заказ-звонка #########//
 function clear($var){

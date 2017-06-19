@@ -8,15 +8,17 @@ require_once MODEL;
 require_once 'functions/functions.php';
 
 // подключение динамическую часть шаблона
-$view = empty($_GET['view']) ? 'page' : $_GET['view'];
+$view = empty($_GET['view']) ? 'home' : $_GET['view'];
 
 // выводим навигацию
 $page = pages();
 
 // проверяем на какой странице мы находимся через $view
 switch ($view) {
-	case ('project'):
-		# code...
+	case ('home'):
+		$slider_1 = sliderHome('1'); // слайдер №1
+		$slider_2 = sliderHome('2'); // слайдер №2
+		$slider_3 = sliderHome('3'); // слайдер №3
 	break;
 
 	case('contact'):
@@ -28,7 +30,7 @@ switch ($view) {
 	break;
 	
 	default:
-		$view = 'page';
+		$view = 'home';
 	break;
 }
 
