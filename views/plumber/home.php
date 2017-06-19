@@ -15,7 +15,7 @@
 						data-title="EXPERTISE YOU CAN TRUST">
 						
 						<img 
-							src="<?=TEMPLATE?><?php echo $slider_1['img']; ?>" 
+							src="<?=TEMPLATE?><?=$slider_1['img']; ?>" 
 							data-bgrepeat="no-repeat" 
 							data-bgfit="cover" 
 							data-bgposition="top center"

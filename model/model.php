@@ -38,7 +38,7 @@ function sliderHome($slider){
 	$sliderHome = array();
 	$sliderHome[] = mysqli_fetch_assoc($result);
 
-	return $sliderHome; 
+	return $sliderHome[0]; 
 }
 /* :выводим слайдера на странице home */
 
