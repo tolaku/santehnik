@@ -11,7 +11,7 @@
 						class="slider-1" 
 						data-transition="fade" 
 						data-slotamount="7" 
-						data-thumb="<?=TEMPLATE?>img/slides/image1.jpg"
+						data-thumb="<?=TEMPLATE?><?=$slider_1['img']; ?>"
 						data-title="EXPERTISE YOU CAN TRUST">
 						
 						<img 
@@ -29,9 +29,12 @@
 							data-speed="700" 
 							data-start="1700"  
 							data-easing="easeOutBack">
-
-							<h1 style=""><span>качество</span> <br>
-							и гарантия</h1>
+							<!-- Выводим H1 -->
+							<?php if(!empty($slider_1['h1']) AND $slider_1['h1'] >= 1): ?>
+								<?php foreach($slider_1['h1'] as $slider_1_h1): ?>
+								<h1 style=""><?=$slider_1_h1?></h1>
+								<?php endforeach; ?>
+							<?php endif; ?>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut labore et dolore <br> magna aliqua. Ut enim ad minim veniam exercitation.</p>
 							<button class="hvr-bounce-to-right">learn more</button>
 						</div> <!-- /.banner-txt -->
@@ -79,11 +82,11 @@
 						class="slider-2" 
 						data-transition="fade" 
 						data-slotamount="7" 
-						data-thumb="<?=TEMPLATE?>img/slides/image2.jpg"
+						data-thumb="<?=TEMPLATE?><?=$slider_2['img']?>"
 						data-title="WE ARE AVAILABLE">
 
 						<img 
-							src="<?=TEMPLATE?>img/slides/image2.jpg" 
+							src="<?=TEMPLATE?><?=$slider_2['img']?>" 
 							data-bgrepeat="no-repeat" 
 							data-bgfit="cover" 
 							data-bgposition="top center"

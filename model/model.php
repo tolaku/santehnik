@@ -38,6 +38,15 @@ function sliderHome($slider){
 	$sliderHome = array();
 	$sliderHome[] = mysqli_fetch_assoc($result);
 
+	// вынимаем данные из h1 
+	if(!empty($sliderHome[0]['h1'])){ 
+		$sliderHome[0]['h1'] = explode("|", $sliderHome[0]['h1']);
+	}
+	// вынимаем данные из div
+	if(!empty($sliderHome[0]['div'])){
+		$sliderHome[0]['div'] = explode("|", $sliderHome[0]['div']);
+	}
+
 	return $sliderHome[0]; 
 }
 /* :выводим слайдера на странице home */
