@@ -1,6 +1,5 @@
 <?php defined('PLUMBER') or die('Разве хорошо воровать?');?>
-<?php print_arr($slider_1); ?>
-<?php print_arr($slider_2); ?>
+
 		<!-- #banner -->
 	<section id="banner">
 		<div class="banner-container">
@@ -12,7 +11,7 @@
 						data-transition="fade" 
 						data-slotamount="7" 
 						data-thumb="<?=TEMPLATE?><?=$slider_1['img']; ?>"
-						data-title="EXPERTISE YOU CAN TRUST">
+						data-title="эксперты">
 						
 						<img 
 							src="<?=TEMPLATE?><?=$slider_1['img']; ?>" 
@@ -29,14 +28,16 @@
 							data-speed="700" 
 							data-start="1700"  
 							data-easing="easeOutBack">
-							<!-- Выводим H1 -->
+							<!-- выводим заголовки в слайдере №1 -->
 							<?php if(!empty($slider_1['h1']) AND $slider_1['h1'] >= 1): ?>
 								<?php foreach($slider_1['h1'] as $slider_1_h1): ?>
-								<h1 style=""><?=$slider_1_h1?></h1>
+									<h1 style=""><?=$slider_1_h1?></h1>
 								<?php endforeach; ?>
 							<?php endif; ?>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut labore et dolore <br> magna aliqua. Ut enim ad minim veniam exercitation.</p>
-							<button class="hvr-bounce-to-right">learn more</button>
+
+							<!-- выводим текст в слайдере №1 -->
+							<?=$slider_1['text']?>
+							<button class="hvr-bounce-to-right">Узнать больше</button>
 						</div> <!-- /.banner-txt -->
 
 						<!-- .banner-form -->
@@ -83,7 +84,7 @@
 						data-transition="fade" 
 						data-slotamount="7" 
 						data-thumb="<?=TEMPLATE?><?=$slider_2['img']?>"
-						data-title="WE ARE AVAILABLE">
+						data-title="гарантия">
 
 						<img 
 							src="<?=TEMPLATE?><?=$slider_2['img']?>" 
@@ -91,101 +92,45 @@
 							data-bgfit="cover" 
 							data-bgposition="top center"
 							alt="slider image">
-						
-						<div 
-							class="caption skewfromright  light-plumber-slider-caption tp-resizeme" 
-							data-x="0" 
-							data-y="200" 
-							data-speed="600" 
-							data-start="1700" 
-							data-easing="easeOutBack">
-
-							<h1>справимся с поставленной</h1>
-						</div>
-						<div 
-							class="caption randomrotate bold-plumber-slider-caption tp-resizeme" 
-							data-x="0" 
-							data-y="250" 
-							data-speed="500" 
-							data-start="2200" 
-							data-easing="easeOutBack">
-
-							<h1>задачей <br>вашего водопровода</h1>
-						</div>
-						
+						<?php if(!empty($slider_2['h1']) AND !empty($slider_2['div'])): ?>
+						<?php foreach(array_combine($slider_2['h1'], $slider_2['div']) as $slider_2_h1 => $slider_2_div): ?>
+							<!-- Выводим div class и data для заголовков в слайдере №2 -->
+							<div 
+								<?=$slider_2_div?> 
+								>
+							<!-- Выводим заголовки в слайдере №2 -->
+								<h1><?=$slider_2_h1?></h1>
+							</div>
+						<?php endforeach; ?>
+						<?php endif; ?>
 
 					</li>
 					<li 
 						class="slider-3" 
 						data-transition="fade" 
 						data-slotamount="7" 
-						data-thumb="<?=TEMPLATE?>img/slides/image3.jpg"
-						data-title="24 hours availability">
+						data-thumb="<?=TEMPLATE?><?=$slider_3['img']?>"
+						data-title="24 часа">
 
 						<img 
-							src="<?=TEMPLATE?>img/slides/image3.jpg" 
+							src="<?=TEMPLATE?><?=$slider_3['img']?>" 
 							data-bgrepeat="no-repeat" 
 							data-bgfit="cover" 
 							data-bgposition="center center"
 							alt="slider image">
 						
-						<div 
-							class="caption fade tp-resizeme bold-pxslider-caption"
-							data-x="780" 
-							data-y="95" 
-							data-speed="500" 
-							data-start="1700">
-							<h1>наша работа</h1>
-						</div>
-						<div 
-							class="caption lfl tp-resizeme light-pxslider-caption"
-							data-x="780" 
-							data-y="145" 
-							data-speed="500" 
-							data-start="2200">
-							<h1>ваше спокойствие</h1>
-						</div>
-						<div 
-							class="caption lfl tp-resizeme simple-pxslider-caption"
-							data-x="780" 
-							data-y="225" 
-							data-speed="500" 
-							data-start="2400">
-							<i class="fa fa-check"></i> 24 часа
-						</div>
-						<div 
-							class="caption lfl tp-resizeme simple-pxslider-caption"
-							data-x="780" 
-							data-y="290" 
-							data-speed="500" 
-							data-start="2600">
-							<i class="fa fa-check"></i> профессиональная команда
-						</div>
-						<div 
-							class="caption lfl tp-resizeme simple-pxslider-caption"
-							data-x="780" 
-							data-y="355" 
-							data-speed="500" 
-							data-start="2800">
-							<i class="fa fa-check"></i> Гарантированное качество
-						</div>
-						<div 
-							class="caption lfl tp-resizeme simple-pxslider-caption"
-							data-x="780" 
-							data-y="420" 
-							data-speed="500" 
-							data-start="3000">
-							<i class="fa fa-check"></i> Бесплатная консультация
-						</div>
-						<div 
-							class="caption lfl tp-resizeme simple-pxslider-caption"
-							data-x="780" 
-							data-y="485" 
-							data-speed="500" 
-							data-start="3000">
-							<i class="fa fa-check"></i> Невысокая цена
-						</div>
-
+						<?php if(!empty($slider_3['h1']) AND !empty($slider_3['div'])): ?>
+						<?php foreach(array_combine($slider_3['h1'], $slider_3['div']) as $slider_3_h1 => $slider_3_div): ?>
+							<!-- Выводим div class и data для заголовков в слайдере №2 -->
+							<div 
+								<?=$slider_3_div?> 
+								>
+							<!-- Выводим заголовки в слайдере №2 -->
+								<?=$slider_3_h1?>
+							</div>
+						<?php endforeach; ?>
+						<?php endif; ?>
+						
 					</li>
 
 				</ul>
