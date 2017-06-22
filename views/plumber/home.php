@@ -145,7 +145,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12">
-					<p>Звоните нам и мы оперативно решим вашу сантехнику <b>в любое для вас время.</b></p>
+					<?php $str = constants('promotional_text'); echo $str['text'] ?>
 				</div>
 			</div>
 		</div>
