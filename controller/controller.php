@@ -19,6 +19,9 @@ switch ($view) {
 		$slider_1 = sliderHome('1'); // слайдер №1
 		$slider_2 = sliderHome('2'); // слайдер №2
 		$slider_3 = sliderHome('3'); // слайдер №3
+
+		// выводим контейнеры
+		container ('name', 'page');
 	break;
 
 	case('contact'):
