@@ -21,7 +21,17 @@ switch ($view) {
 		$slider_3 = sliderHome('3'); // слайдер №3
 
 		// выводим контейнеры
-		container ('name', 'page');
+		$who_we_are_a = container('who_we_are_a', 'home');
+		$who_we_are_b = container('who_we_are_b', 'home');
+		$who_we_are_c = container('who_we_are_c', 'home');
+	break;
+
+	case('project'):
+
+	break;
+
+	case('uslugi'):
+
 	break;
 
 	case('contact'):

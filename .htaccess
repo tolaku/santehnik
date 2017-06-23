@@ -8,4 +8,4 @@ ErrorDocument 404 /?view=404
 
 
 
-#1. home выводим h1 и div из table mysql
+#1. home формируем базу данных для uslug (id, name,)

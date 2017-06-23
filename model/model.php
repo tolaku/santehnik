@@ -53,7 +53,14 @@ function sliderHome($slider){
 
 /* Получаем данные по container */
 function container($name, $page){
+	global $db;
 	$query = "SELECT * FROM container WHERE name = '$name' AND page = '$page'";
+	$result = mysqli_query($db, $query);
+
+	$string = array();
+	$string = mysqli_fetch_assoc($result);
+
+	return $string;
 }
 /* :получаем данные по container */
 

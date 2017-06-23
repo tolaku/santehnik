@@ -157,26 +157,23 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-12 large-box col-sm-12 col-xs-12 wow zoomIn hvr-float-shadow" data-wow-duration=".5s">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 img-holder">
-						<img src="<?=TEMPLATE?>img/who-we-are/1.jpg" alt="">
+						<img src="<?=TEMPLATE?><?=$who_we_are_a['img'];?>" alt="">
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 hvr-bounce-to-left">
-						<h2>Сантехник</h2>
-						<p>Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec odios Suspe ndisse cursus mal suada faci lisis. Lorem ipsum dolor sit ametion consectetur elit. Vesti bulum nec odio ipsum. </p>
+						<?=$who_we_are_a['text'];?>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 single-box wow zoomIn" data-wow-duration=".5s" data-wow-delay=".5s">
 					<div class="img-holder">
-						<img src="<?=TEMPLATE?>img/who-we-are/2.jpg" alt="">
+						<img src="<?=TEMPLATE?><?=$who_we_are_b['img'];?>" alt="">
 					</div>
-					<h2>сантехник в производстве</h2>
-					<p>Lorem ipsum dolor sit amet, consecte turelit. Vestibulum nec odio ipsumer Suspe ndisse cursus malesuada.</p>
+					<?=$who_we_are_b['text'];?>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 single-box wow zoomIn" data-wow-duration=".5s" data-wow-delay="1s">
 					<div class="img-holder">
-						<img src="<?=TEMPLATE?>img/who-we-are/3.jpg" alt="">
+						<img src="<?=TEMPLATE?><?=$who_we_are_c['img'];?>" alt="">
 					</div>
-					<h2>сантехник дома</h2>
-					<p>Lorem ipsum dolor sit amet, consecte turelit. Vestibulum nec odio ipsumer Suspe ndisse cursus malesuada.</p>
+					<?=$who_we_are_c['text'];?>
 				</div>
 			</div>
 		</div>
