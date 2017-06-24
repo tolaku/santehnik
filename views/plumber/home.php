@@ -145,7 +145,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12">
-					<?php $str = constants('promotional_text'); echo $str['text'] ?>
+					<?=constants('promotional_text'); ?>
 				</div>
 			</div>
 		</div>
@@ -183,7 +183,7 @@
 	<section id="service-we-provide">
 		<div class="container">
 			<div class="section-title">
-				<h1>Услуги которые мы предлагаем</h1>
+				<?=constants('uslugi_name');?>
 			</div>
 			<div class="row">
 				<div class="col-lg-3 col-md-3 wow slideInLeft">
@@ -201,7 +201,7 @@
 					<div class="row">
 						<div class="service-tab-content clearfix">
 							<div id="plumbing">
-								<div class="col-lg-8 col-md-7 col-sm-8">
+								<div class="col-lg-8 col-md-8 col-sm-8">
 									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <br> dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent <br> ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo <br> inventore veritatis et quasi architecto.</p>
 									<div class="row">
 										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">

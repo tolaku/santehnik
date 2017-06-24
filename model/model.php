@@ -8,7 +8,8 @@ function constants($str){
 	$result = mysqli_query($db, $query) or die(mysql_error());
 
 	$string = mysqli_fetch_assoc($result);
-	return $string;
+
+	return $string['text'];
 }
 
 /* выводим страницы в header */

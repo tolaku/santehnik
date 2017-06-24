@@ -34,7 +34,7 @@
 				<div class="contact-info pull-right">
 					<ul>
 					<!-- Выводим телефон и email -->
-					<?php $str = constants('heder_telefon'); echo $str['text'] ?>
+					<?=constants('heder_telefon'); ?>
 					</ul>
 				</div> <!-- /.contact-info -->
 			</div>
