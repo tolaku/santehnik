@@ -65,4 +65,21 @@ function container($name, $page){
 }
 /* :получаем данные по container */
 
+/* Выводим данные по услугам */
+function uslugi(){
+	global $db;
+	$query = "SELECT a.id, a.name, b.img, b.text, b.list FROM pages a
+	JOIN uslugi b 
+	ON a.id = b.page_id AND a.url_page = 'uslugi'";
+
+	$result = mysqli_query($db, $query);
+
+	$uslugi = array();
+	while($row = mysqli_fetch_assoc($result)){
+		$uslugi[$row['id']] = $row;
+	}
+	return $uslugi;
+}
+/* :выводим данные по услугам */
+
 ?>

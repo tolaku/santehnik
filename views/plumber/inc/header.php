@@ -1,4 +1,5 @@
 <?php defined('PLUMBER') or die('Разве хорошо воровать?');?>
+<?php print_arr($uslugi) ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

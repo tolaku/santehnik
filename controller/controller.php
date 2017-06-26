@@ -24,6 +24,9 @@ switch ($view) {
 		$who_we_are_a = container('who_we_are_a', 'home');
 		$who_we_are_b = container('who_we_are_b', 'home');
 		$who_we_are_c = container('who_we_are_c', 'home');
+
+		// выводим услуги
+		$uslugi = uslugi();
 	break;
 
 	case('project'):
