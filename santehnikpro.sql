@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Июн 24 2017 г., 16:39
+-- Время создания: Июн 27 2017 г., 00:28
 -- Версия сервера: 5.7.18-0ubuntu0.16.04.1
 -- Версия PHP: 7.0.15-0ubuntu0.16.04.4
 
@@ -127,6 +127,7 @@ INSERT INTO `slider_home` (`id`, `name`, `img`, `h1`, `div`, `text`) VALUES
 CREATE TABLE `uslugi` (
   `id` int(11) NOT NULL,
   `page_id` int(11) DEFAULT NULL,
+  `latina` varchar(255) DEFAULT NULL,
   `img` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `text` text CHARACTER SET utf8,
   `list` varchar(255) CHARACTER SET utf8 DEFAULT NULL
@@ -136,8 +137,9 @@ CREATE TABLE `uslugi` (
 -- Дамп данных таблицы `uslugi`
 --
 
-INSERT INTO `uslugi` (`id`, `page_id`, `img`, `text`, `list`) VALUES
-(1, 5, 'img/project-v5/1.jpg', '<p>Сюда входит установка котла, бойлера, насоса, расширительного бака, труб отопления и так далее.</p>', 'Установка и обвязка котла | Установка и монтаж бойлера | Монтаж циркуляционного насоса');
+INSERT INTO `uslugi` (`id`, `page_id`, `latina`, `img`, `text`, `list`) VALUES
+(1, 5, 'otoplenie', 'img/project-v5/1.jpg', '<p>Сюда входит установка котла, бойлера, насоса, расширительного бака, труб отопления и так далее.</p>', 'Установка и обвязка котла | Установка и монтаж бойлера | Монтаж циркуляционного насоса'),
+(2, 6, 'vodosnabshenie', 'img/project-v5/1.jpg', '<p>Сюда входит установка насоса водоснабжения</p>', 'Насос водоснабжения | Насос ...');
 
 --
 -- Индексы сохранённых таблиц
@@ -202,7 +204,7 @@ ALTER TABLE `slider_home`
 -- AUTO_INCREMENT для таблицы `uslugi`
 --
 ALTER TABLE `uslugi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

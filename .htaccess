@@ -8,4 +8,4 @@ ErrorDocument 404 /?view=404
 
 
 
-#1. таблийа uslugi (id, page_id, img, text, list) связали поля, а так же данные будут выводиться на странице uslugi.php и project.php
+#1. вывели данные из table pages and  и пишем кодв в файле home.php 208 строка 

@@ -189,17 +189,23 @@
 				<div class="col-lg-3 col-md-3 wow slideInLeft">
 					<div class="service-tab-title">
 						<ul class="clearfix">
-							<li class="active" data-tab-name="drain">Монтаж отопления</li>
+						<?php if($uslugi): ?>
+						<?php foreach($uslugi as $usluga): ?>
+							<li data-tab-name="<?=$usluga['latina']?>"><?=$usluga['name']?></li>
+							<!-- <li class="active" data-tab-name="drain">Монтаж отопления</li> 
 							<li data-tab-name="bath">Монтаж водоснабжения</li>
 							<li data-tab-name="kitchen">Монтаж канализации</li>
 							<li data-tab-name="outside">Сантехническая посуда</li>
-							<li data-tab-name="broken">Установка оборудования</li>
+							<li data-tab-name="broken">Установка оборудования</li> -->
+						<?php endforeach; ?>
+						<?php endif; ?>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9 wow slideInRight">
 					<div class="row">
 						<div class="service-tab-content clearfix">
+							
 							<div id="plumbing">
 								<div class="col-lg-8 col-md-8 col-sm-8">
 									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <br> dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent <br> ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo <br> inventore veritatis et quasi architecto.</p>
@@ -222,6 +228,7 @@
 									<img src="<?=TEMPLATE?>img/service-we-provide/2.png" alt="">
 								</div>
 							</div>
+
 							<div id="bath">
 								<div class="col-lg-8 col-md-8 col-sm-8">
 									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
