@@ -68,7 +68,7 @@ function container($name, $page){
 /* Выводим данные по услугам */
 function uslugi(){
 	global $db;
-	$query = "SELECT a.id, a.name, b.img, b.text, b.list FROM pages a
+	$query = "SELECT a.id, a.name, b.latina, b.img, b.text, b.list FROM pages a
 	JOIN uslugi b 
 	ON a.id = b.page_id AND a.url_page = 'uslugi'";
 
@@ -77,6 +77,7 @@ function uslugi(){
 	$uslugi = array();
 	while($row = mysqli_fetch_assoc($result)){
 		$uslugi[$row['id']] = $row;
+		$uslugi[$row['id']]['list'] = explode("|", $uslugi[$row['id']]['list']);
 	}
 	return $uslugi;
 }
