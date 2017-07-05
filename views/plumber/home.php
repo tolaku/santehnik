@@ -354,7 +354,7 @@
 				</div>
 
 			</div>
-			<div class="view-all-btn"><a href="project-v1.html" class="view-all hvr-bounce-to-right">посмотреть все</a></div>
+			<div class="view-all-btn"><a href="?view=gallery" class="view-all hvr-bounce-to-right">посмотреть все</a></div>
 		</div>
 	</section> <!-- /#our-projects -->
 

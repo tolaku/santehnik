@@ -29,6 +29,10 @@ switch ($view) {
 		$uslugi = uslugi();
 	break;
 
+	case ('gallery'):
+
+	break;
+
 	case('project'):
 
 	break;
