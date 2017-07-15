@@ -27,6 +27,9 @@ switch ($view) {
 
 		// выводим услуги
 		$uslugi = uslugi();
+
+		## Выводим галлерею (gallery)
+		$gallery = Gallers();
 	break;
 
 	case ('gallery'):

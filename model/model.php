@@ -83,4 +83,18 @@ function uslugi(){
 }
 /* :выводим данные по услугам */
 
+/* Выводим галлерею (gallery) */
+	function Gallers(){
+		global $db;
+		$query = "SELECT * FROM gallery";
+		$result = mysqli_query($db, $query);
+
+		$gallers = array();
+		while($row = mysqli_fetch_assoc($result)){
+			$gallers[] = $row;
+		}
+		return $gallers;
+	}
+/* :выводим галлерею (gallery) */
+
 ?>

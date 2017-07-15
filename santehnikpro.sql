@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Июл 04 2017 г., 00:21
+-- Время создания: Июл 15 2017 г., 09:54
 -- Версия сервера: 5.7.18-0ubuntu0.16.04.1
 -- Версия PHP: 7.0.15-0ubuntu0.16.04.4
 
@@ -52,7 +52,7 @@ CREATE TABLE `container` (
   `id` int(3) UNSIGNED NOT NULL,
   `title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `page` varchar(255) DEFAULT NULL,
+  `page` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `img` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `text` text CHARACTER SET utf8
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -65,6 +65,32 @@ INSERT INTO `container` (`id`, `title`, `name`, `page`, `img`, `text`) VALUES
 (1, 'Сантехник', 'who_we_are_a', 'home', 'img/who-we-are/1.jpg', '<h2>Сантехник</h2>\n						<p>Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec odios Suspe ndisse cursus mal suada faci lisis. Lorem ipsum dolor sit ametion consectetur elit. Vesti bulum nec odio ipsum. </p>'),
 (2, 'Сантехник в производстве', 'who_we_are_b', 'home', 'img/who-we-are/2.jpg', '<h2>сантехник в производстве</h2>\r\n					<p>Lorem ipsum dolor sit amet, consecte turelit. Vestibulum nec odio ipsumer Suspe ndisse cursus malesuada.</p>'),
 (3, 'Сантехник дома', 'who_we_are_c', 'home', 'img/who-we-are/3.jpg', '<h2>сантехник дома</h2>\r\n					<p>Lorem ipsum dolor sit amet, consecte turelit. Vestibulum nec odio ipsumer Suspe ndisse cursus malesuada.</p>');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `id` int(3) NOT NULL,
+  `h4_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `span_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `img` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `img_max` varchar(255) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `h4_name`, `span_name`, `img`, `img_max`) VALUES
+(1, 'Установка умывальника', 'со шкафчиком из массива берёзы', '1.jpg', '1_max.jpg'),
+(2, 'Сборка', 'Переключатель подачи воды', '2.jpg', '2_max.jpg'),
+(3, 'Установка труб', 'В ванной комнате', '3.jpg', '3_max.jpg'),
+(4, 'Унитаз и биде', 'Установка и навеска на инсталляцию биде и унитаза', '4.jpg', '4_max.jpg'),
+(5, 'Гребёнка сборной фирмы KAN 2', 'Обвязка гребёнок тёплого пола и батарей', '5.jpg', '5_max.jpg'),
+(6, 'Котельная', 'Котельная', '6.jpg', '6_max.jpg');
 
 -- --------------------------------------------------------
 
@@ -127,7 +153,7 @@ INSERT INTO `slider_home` (`id`, `name`, `img`, `h1`, `div`, `text`) VALUES
 CREATE TABLE `uslugi` (
   `id` int(11) NOT NULL,
   `page_id` int(11) DEFAULT NULL,
-  `latina` varchar(255) DEFAULT NULL,
+  `latina` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `img` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `text` text CHARACTER SET utf8,
   `list` varchar(255) CHARACTER SET utf8 DEFAULT NULL
@@ -155,6 +181,12 @@ ALTER TABLE `constants`
 -- Индексы таблицы `container`
 --
 ALTER TABLE `container`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `gallery`
+--
+ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -190,6 +222,11 @@ ALTER TABLE `constants`
 --
 ALTER TABLE `container`
   MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT для таблицы `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `pages`
 --
