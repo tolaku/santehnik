@@ -6,10 +6,12 @@
 				<h1>Встретиться со специалистом</h1>
 			</div>
 			<div class="row">
-				<div class="col-lg-3 col-md-3 col-sm-6 wow zoomIn hvr-float-shadow" data-wow-duration=".5s" data-wow-delay="0">
+			<?php if($specialists == true): ?>
+				<?php foreach($specialists as $value): ?>
+				<div class="col-lg-3 col-md-3 col-sm-6 wow zoomIn hvr-float-shadow" data-wow-duration=".5s" data-wow-delay="0"> 
 					<!-- .single-member -->
 					<div class="single-member hvr-bounce-to-bottom">
-						<img src="<?=TEMPLATE?>img/our-specialist/1.png" alt="">
+						<img src="<?=TEMPLATE?>img/our-specialist/<?=$value['img']?>" alt="">
 						<div class="info hvr-bounce-to-top">
 							<ul class="social">
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -17,59 +19,13 @@
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 							</ul>
-							<h2>Константин</h2>
-							<p class="position">Сантехник-механик</p>
+							<h2><?=$value['name']?></h2>
+							<p class="position"><?=$value['snipet']?></p>
 						</div>
 					</div> <!-- /.single-member -->
 				</div>
-				<div class="col-lg-3 col-md-3  col-sm-6 wow zoomIn hvr-float-shadow" data-wow-duration=".5s" data-wow-delay=".5s">
-					<!-- .single-member -->
-					<div class="single-member hvr-bounce-to-bottom">
-						<img src="<?=TEMPLATE?>img/our-specialist/2.png" alt="">
-						<div class="info hvr-bounce-to-top">
-							<ul class="social">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-							</ul>
-							<h2>Rock Leue</h2>
-							<p class="position">Plumbing Mechanic</p>
-						</div>
-					</div> <!-- /.single-member -->
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-6 wow zoomIn hvr-float-shadow" data-wow-duration=".5s" data-wow-delay="1s">
-					<!-- .single-member -->
-					<div class="single-member hvr-bounce-to-bottom">
-						<img src="<?=TEMPLATE?>img/our-specialist/3.png" alt="">
-						<div class="info hvr-bounce-to-top">
-							<ul class="social">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-							</ul>
-							<h2>Michale cock</h2>
-							<p class="position">Plumbing Mechanic</p>
-						</div>
-					</div> <!-- /.single-member -->
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-6 wow zoomIn hvr-float-shadow" data-wow-duration=".5s" data-wow-delay="1.5s">
-					<!-- .single-member -->
-					<div class="single-member hvr-bounce-to-bottom">
-						<img src="<?=TEMPLATE?>img/our-specialist/4.png" alt="">
-						<div class="info hvr-bounce-to-top">
-							<ul class="social">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-							</ul>
-							<h2>Rock Leue</h2>
-							<p class="position">Plumbing Mechanic</p>
-						</div>
-					</div> <!-- /.single-member -->
-				</div>
+				<?php endforeach; ?>
+			<?php endif; ?>
 			</div>
 		</div>
 	</section> <!-- /#our-specialist -->

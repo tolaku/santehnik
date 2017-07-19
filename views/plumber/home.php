@@ -189,14 +189,10 @@
 				<div class="col-lg-3 col-md-3 wow slideInLeft">
 					<div class="service-tab-title">
 						<ul class="clearfix">
-						<?php if($uslugi): ?>
+						<?php if($uslugi): # Выводим список услуг ?>
 						<?php foreach($uslugi as $usluga): ?>
 							<li data-tab-name="<?=$usluga['latina']?>"><?=$usluga['name']?></li>
-							<!-- <li class="active" data-tab-name="drain">Монтаж отопления</li> 
-							<li data-tab-name="bath">Монтаж водоснабжения</li>
-							<li data-tab-name="kitchen">Монтаж канализации</li>
-							<li data-tab-name="outside">Сантехническая посуда</li>
-							<li data-tab-name="broken">Установка оборудования</li> -->
+							<!-- <li class="active" data-tab-name="drain">Монтаж отопления</li>  -->
 						<?php endforeach; ?>
 						<?php endif; ?>
 						</ul>
@@ -206,43 +202,20 @@
 					<div class="row">
 						<div class="service-tab-content clearfix">
 							
-							<div id="plumbing">
+							<?php foreach($uslugi as $value): # Выводим по списку услугу ?>
+							<div id="<?=$value['latina']?>">
 								<div class="col-lg-8 col-md-8 col-sm-8">
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <br> dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent <br> ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo <br> inventore veritatis et quasi architecto.</p>
+									<?=$value['text']?>
 									<div class="row">
 										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<img src="<?=TEMPLATE?>img/service-we-provide/1.jpg" alt="">
+											<img src="<?=TEMPLATE?><?=$value['img']?>" alt="">
 										</div>
 										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 											<ul>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus erroroluptatem</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium doloremue</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Laudantium unde </li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus error sit volupta</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium dolor</li>										
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-									<img src="<?=TEMPLATE?>img/service-we-provide/2.png" alt="">
-								</div>
-							</div>
+											<?php foreach($value['list'] as $item['li']): ?>
 
-							<div id="bath">
-								<div class="col-lg-8 col-md-8 col-sm-8">
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-									<div class="row">
-										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<img src="<?=TEMPLATE?>img/service-we-provide/1.jpg" alt="">
-										</div>
-										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<ul>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus erroroluptatem</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium doloremue</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Laudantium unde </li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus error sit volupta</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium dolor</li>										
+												<li><i class="fa fa-arrow-circle-o-right"></i><?=$item['li']?></li>
+											<?php endforeach; ?>										
 											</ul>
 										</div>
 									</div>
@@ -251,94 +224,12 @@
 									<img src="<?=TEMPLATE?>img/service-we-provide/2.png" alt="">
 								</div>
 							</div>
-							<div id="kitchen">
-								<div class="col-lg-8 col-md-8 col-sm-8">
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-									<div class="row">
-										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<img src="<?=TEMPLATE?>img/service-we-provide/1.jpg" alt="">
-										</div>
-										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<ul>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus erroroluptatem</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium doloremue</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Laudantium unde </li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus error sit volupta</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium dolor</li>										
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-									<img src="<?=TEMPLATE?>img/service-we-provide/2.png" alt="">
-								</div>
-							</div>
-							<div id="drain">
-								<div class="col-lg-8 col-md-8 col-sm-8">
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-									<div class="row">
-										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<img src="<?=TEMPLATE?>img/service-we-provide/1.jpg" alt="">
-										</div>
-										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<ul>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus erroroluptatem</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium doloremue</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Laudantium unde </li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus error sit volupta</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium dolor</li>										
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-									<img src="<?=TEMPLATE?>img/service-we-provide/2.png" alt="">
-								</div>
-							</div>
-							<div id="toilet">
-								<div class="col-lg-8 col-md-8 col-sm-8">
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-									<div class="row">
-										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<img src="<?=TEMPLATE?>img/service-we-provide/1.jpg" alt="">
-										</div>
-										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<ul>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus erroroluptatem</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium doloremue</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Laudantium unde </li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus error sit volupta</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium dolor</li>										
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-									<img src="<?=TEMPLATE?>img/service-we-provide/2.png" alt="">
-								</div>
-							</div>
-							<div id="broken">
-								<div class="col-lg-8 col-md-8 col-sm-8">
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
-									<div class="row">
-										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<img src="<?=TEMPLATE?>img/service-we-provide/1.jpg" alt="">
-										</div>
-										<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-											<ul>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus erroroluptatem</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium doloremue</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Laudantium unde </li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Natus error sit volupta</li>
-												<li><i class="fa fa-arrow-circle-o-right"></i>Accusantium dolor</li>										
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zoomIn">
-									<img src="<?=TEMPLATE?>img/service-we-provide/2.png" alt="">
-								</div>
-							</div>
+						<?php endforeach; ?>
+
+											
+
+
+							<!--
 							<div id="outside">
 								<div class="col-lg-8 col-md-8 col-sm-8">
 									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
@@ -361,6 +252,7 @@
 									<img src="<?=TEMPLATE?>img/service-we-provide/2.png" alt="">
 								</div>
 							</div>
+							-->
 						</div>
 					</div>
 				</div>
@@ -376,6 +268,25 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12 col-md-12 masonary-gallery">
+
+					<?php if($gallery == true): # Выводим gallerys ?>
+						<?php foreach($gallery as $value): ?>
+							<div class="masonary-item width-<?=$value['width']?> <?php if($value['height'] == true) echo "height-1"; ?>">
+							<a class="fancybox" href="<?=TEMPLATE?>img/our-projects/<?=$value['img_max']?>"><div class="img-wrap">
+								<img src="<?=TEMPLATE?>img/our-projects/<?=$value['img']?>" alt="">
+								<div class="content-wrap">
+									<div class="border">
+										<div class="content">
+											<h4><?=$value['h4_name']?></h4>
+											<span><?=$value['span_name']?></span>
+										</div>
+									</div>
+								</div>
+							</div></a>
+						</div>
+						<?php endforeach; ?>
+					<?php endif; ?> 
+					<!--
 					<div class="masonary-item width-1">
 						<a class="fancybox" href="<?=TEMPLATE?>img/our-projects/1_max.jpg"><div class="img-wrap">
 							<img src="<?=TEMPLATE?>img/our-projects/1.jpg" alt="">
@@ -389,76 +300,11 @@
 							</div>
 						</div></a>
 					</div>
-					<div class="masonary-item width-1">
-						<a class="fancybox" href="<?=TEMPLATE?>img/our-projects/2_max.jpg"><div class="img-wrap">
-							<img src="<?=TEMPLATE?>img/our-projects/2.jpg" alt="">
-							<div class="content-wrap">
-								<div class="border">
-									<div class="content">
-										<h4>Сборка</h4>
-										<span>Переключатель подачи воды</span>
-									</div>
-								</div>
-							</div>
-						</div></a>
-					</div>		
-					<div class="masonary-item width-1 height-1">
-						<a class="fancybox" href="<?=TEMPLATE?>img/our-projects/3_max.jpg"><div class="img-wrap">
-							<img src="<?=TEMPLATE?>img/our-projects/3.jpg" alt="">
-							<div class="content-wrap">
-								<div class="border">
-									<div class="content">
-										<h4>Установка труб</h4>
-										<span>В ванной комнате</span>
-									</div>
-								</div>
-							</div>
-						</div></a>
-					</div>		
-					<div class="masonary-item width-1">
-						<a class="fancybox" href="<?=TEMPLATE?>img/our-projects/4_max.jpg"><div class="img-wrap">
-							<img src="<?=TEMPLATE?>img/our-projects/4.jpg" alt="">
-							<div class="content-wrap">
-								<div class="border">
-									<div class="content">
-										<h4>Унитаз и биде</h4>
-										<span>Установка и навеска на инсталляцию биде и унитаза</span>
-									</div>
-								</div>
-							</div>
-						</div></a>
-					</div>		
-					<div class="masonary-item width-2">
-						<a class="fancybox" href="<?=TEMPLATE?>img/our-projects/5_max.jpg"><div class="img-wrap">
-							<img src="<?=TEMPLATE?>img/our-projects/5.jpg" alt="">
-							<div class="content-wrap">
-								<div class="border">
-									<div class="content">
-										<h4>Гребёнка сборной фирмы KAN 2</h4>
-										<span>Обвязка гребёнок тёплого пола и батарей</span>
-									</div>
-								</div>
-							</div>
-						</div></a>
-					</div>					
-					<div class="masonary-item width-1">
-						<a class="fancybox" href="<?=TEMPLATE?>img/our-projects/6_max.jpg"><div class="img-wrap">
-							<img src="<?=TEMPLATE?>img/our-projects/6.jpg" alt="">
-							<div class="content-wrap">
-								<div class="border">
-									<div class="content">
-										<h4>Котельная</h4>
-										<span>Полная установка котла с подключением</span>
-									</div>
-								</div>
-							</div>
-						</div></a>
-					</div>
-
+					-->
 				</div>
 
 			</div>
-			<div class="view-all-btn"><a href="project-v1.html" class="view-all hvr-bounce-to-right">посмотреть все</a></div>
+			<div class="view-all-btn"><a href="?view=gallery" class="view-all hvr-bounce-to-right">посмотреть все</a></div>
 		</div>
 	</section> <!-- /#our-projects -->
 

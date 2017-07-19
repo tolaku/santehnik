@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Июн 27 2017 г., 00:28
--- Версия сервера: 5.7.18-0ubuntu0.16.04.1
--- Версия PHP: 7.0.15-0ubuntu0.16.04.4
+-- Хост: 127.0.0.1
+-- Время создания: Июл 19 2017 г., 18:01
+-- Версия сервера: 5.5.25
+-- Версия PHP: 5.3.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- База данных: `santehnikpro`
@@ -26,12 +26,13 @@ SET time_zone = "+00:00";
 -- Структура таблицы `constants`
 --
 
-CREATE TABLE `constants` (
-  `id` int(3) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `constants` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `text` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `text` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `constants`
@@ -48,14 +49,15 @@ INSERT INTO `constants` (`id`, `title`, `name`, `text`) VALUES
 -- Структура таблицы `container`
 --
 
-CREATE TABLE `container` (
-  `id` int(3) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `container` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `page` varchar(255) DEFAULT NULL,
+  `page` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `img` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `text` text CHARACTER SET utf8
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `text` text CHARACTER SET utf8,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `container`
@@ -69,16 +71,46 @@ INSERT INTO `container` (`id`, `title`, `name`, `page`, `img`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `gallery`
+--
+
+CREATE TABLE IF NOT EXISTS `gallery` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `h4_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `span_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `img` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `img_max` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `width` int(1) NOT NULL DEFAULT '1',
+  `height` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Дамп данных таблицы `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `h4_name`, `span_name`, `img`, `img_max`, `width`, `height`) VALUES
+(1, 'Установка умывальника', 'со шкафчиком из массива берёзы', '1.jpg', '1_max.jpg', 1, 0),
+(2, 'Сборка', 'Переключатель подачи воды', '2.jpg', '2_max.jpg', 1, 0),
+(3, 'Установка труб', 'В ванной комнате', '3.jpg', '3_max.jpg', 1, 1),
+(4, 'Унитаз и биде', 'Установка и навеска на инсталляцию биде и унитаза', '4.jpg', '4_max.jpg', 1, 0),
+(5, 'Гребёнка сборной фирмы KAN 2', 'Обвязка гребёнок тёплого пола и батарей', '5.jpg', '5_max.jpg', 2, 0),
+(6, 'Котельная', 'Котельная', '6.jpg', '6_max.jpg', 1, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `pages`
 --
 
-CREATE TABLE `pages` (
-  `id` int(3) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `pages` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `url_page` varchar(255) NOT NULL,
   `position` int(3) NOT NULL,
-  `parent_id` int(3) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `parent_id` int(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `pages`
@@ -100,14 +132,15 @@ INSERT INTO `pages` (`id`, `name`, `url_page`, `position`, `parent_id`) VALUES
 -- Структура таблицы `slider_home`
 --
 
-CREATE TABLE `slider_home` (
-  `id` int(1) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `slider_home` (
+  `id` int(1) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
   `h1` text,
   `div` text,
-  `text` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `text` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `slider_home`
@@ -121,17 +154,66 @@ INSERT INTO `slider_home` (`id`, `name`, `img`, `h1`, `div`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `specialist`
+--
+
+CREATE TABLE IF NOT EXISTS `specialist` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `snipet` varchar(255) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `specialist`
+--
+
+INSERT INTO `specialist` (`id`, `name`, `snipet`, `img`) VALUES
+(1, 'Константин', 'Сантехник-механик', '1.png'),
+(2, 'Rock Leue', 'Plumbing Mechanic', '2.png'),
+(3, 'Michale cock', 'Plumbing Mechanic', '3.png'),
+(4, 'Rock Leue', 'Plumbing Mechanic', '4.png');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `testimonials`
+--
+
+CREATE TABLE IF NOT EXISTS `testimonials` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `snipet` varchar(255) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `name`, `snipet`, `img`) VALUES
+(1, 'merry Smith', 'Sed ut perspiciatis unde omnis iste natus er aer or sit voluptatem acc all santium doloremqe laudantium totam.', '1.jpg'),
+(2, 'Анатолий', 'Наша семья, осталось очень довольна работой сантехника Константина, поразила скорость и качество. Благодарим Вас за работу. т.(44) 532-36-04', '2.jpg'),
+(3, 'merry Smith', 'Sed ut perspiciatis unde omnis iste natus er aer or sit voluptatem acc all santium doloremqe laudantium totam.', '3.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `uslugi`
 --
 
-CREATE TABLE `uslugi` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `uslugi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `page_id` int(11) DEFAULT NULL,
-  `latina` varchar(255) DEFAULT NULL,
+  `latina` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `img` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `text` text CHARACTER SET utf8,
-  `list` varchar(255) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `list` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `page_id` (`page_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `uslugi`
@@ -141,70 +223,6 @@ INSERT INTO `uslugi` (`id`, `page_id`, `latina`, `img`, `text`, `list`) VALUES
 (1, 5, 'otoplenie', 'img/project-v5/1.jpg', '<p>Сюда входит установка котла, бойлера, насоса, расширительного бака, труб отопления и так далее.</p>', 'Установка и обвязка котла | Установка и монтаж бойлера | Монтаж циркуляционного насоса'),
 (2, 6, 'vodosnabshenie', 'img/project-v5/1.jpg', '<p>Сюда входит установка насоса водоснабжения</p>', 'Насос водоснабжения | Насос ...');
 
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `constants`
---
-ALTER TABLE `constants`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `container`
---
-ALTER TABLE `container`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `pages`
---
-ALTER TABLE `pages`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `slider_home`
---
-ALTER TABLE `slider_home`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `uslugi`
---
-ALTER TABLE `uslugi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `page_id` (`page_id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `constants`
---
-ALTER TABLE `constants`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT для таблицы `container`
---
-ALTER TABLE `container`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT для таблицы `pages`
---
-ALTER TABLE `pages`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT для таблицы `slider_home`
---
-ALTER TABLE `slider_home`
-  MODIFY `id` int(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT для таблицы `uslugi`
---
-ALTER TABLE `uslugi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

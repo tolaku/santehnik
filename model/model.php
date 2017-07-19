@@ -68,7 +68,7 @@ function container($name, $page){
 /* Выводим данные по услугам */
 function uslugi(){
 	global $db;
-	$query = "SELECT a.id, a.name, b.img, b.text, b.list FROM pages a
+	$query = "SELECT a.id, a.name, b.latina, b.img, b.text, b.list FROM pages a
 	JOIN uslugi b 
 	ON a.id = b.page_id AND a.url_page = 'uslugi'";
 
@@ -77,9 +77,52 @@ function uslugi(){
 	$uslugi = array();
 	while($row = mysqli_fetch_assoc($result)){
 		$uslugi[$row['id']] = $row;
+		$uslugi[$row['id']]['list'] = explode("|", $uslugi[$row['id']]['list']);
 	}
 	return $uslugi;
 }
 /* :выводим данные по услугам */
+
+/* Выводим галлерею (gallery) */
+	function Gallers(){
+		global $db;
+		$query = "SELECT * FROM gallery";
+		$result = mysqli_query($db, $query);
+
+		$gallers = array();
+		while($row = mysqli_fetch_assoc($result)){
+			$gallers[] = $row;
+		}
+		return $gallers;
+	}
+/* :выводим галлерею (gallery) */
+
+/* Выводим специалистов (specialist) */
+function Specialists(){
+	global $db;
+	$query = "SELECT * FROM specialist";
+	$result = mysqli_query($db, $query);
+
+	$specialists = array();
+	while($row = mysqli_fetch_assoc($result)){
+		$specialists[] = $row;
+	}
+	return $specialists;
+}
+/* :выводим специалистов (specialist) */
+
+/* Выводим отзывы (Testimonials) */
+function Testimonials(){
+	global $db;
+	$query = "SELECT * FROM testimonials";
+	$result = mysqli_query($db, $query);
+
+	$testimonials = array();
+	while($row = mysqli_fetch_assoc($result)){
+		$testionials[] = $row; 
+	}
+	return $testionials;
+}
+/* :выводим отзывы (Testimonials) */
 
 ?>

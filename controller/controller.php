@@ -20,13 +20,26 @@ switch ($view) {
 		$slider_2 = sliderHome('2'); // слайдер №2
 		$slider_3 = sliderHome('3'); // слайдер №3
 
-		// выводим контейнеры
+		## выводим контейнеры
 		$who_we_are_a = container('who_we_are_a', 'home');
 		$who_we_are_b = container('who_we_are_b', 'home');
 		$who_we_are_c = container('who_we_are_c', 'home');
 
-		// выводим услуги
+		## выводим услуги
 		$uslugi = uslugi();
+
+		## Выводим галлерею (gallery)
+		$gallery = Gallers();
+
+		## Выводим специалистов (specialist)
+		$specialists = Specialists();
+
+		## Выводим отзывы (testimonial)
+		$testimonials = Testimonials();
+	break;
+
+	case ('gallery'):
+
 	break;
 
 	case('project'):
