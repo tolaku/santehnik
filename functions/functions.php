@@ -44,4 +44,11 @@ if ( $senderName && $senderEmail && $phone && $city ) {
 }
 //####### #обработчик заказ-звонка #########//
 
+/* Выводим отзывы клиеонтов в float списке */
+function Float_testimonials(){
+	$value = array('wow bounceInLeft hvr-float-shadow', 'hvr-float-shadow', 'col-lg-offset-0 col-md-offset-0 col-sm-offset-3 wow bounceInRight hvr-float-shadow');
+	return $value;
+}
+/* :выводим отзывы клиеонтов в float списке */
+
 ?>

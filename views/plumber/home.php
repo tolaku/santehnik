@@ -318,6 +318,8 @@
 				<h1>Что говорят наши клиенты</h1>
 			</div>
 			<div class="row">
+			<?php if($testimonials == true): ## выводим что говорят клиенты ?>
+				<?php foreach($testimonials as $testimonial): ?>
 				<div class="col-lg-4 col-md-4 col-sm-6 wow bounceInLeft hvr-float-shadow">
 					<!-- .single-testimonial -->
 					<div class="single-testimonial  hvr-bounce-to-bottom">
@@ -330,6 +332,9 @@
 						</div>
 					</div> <!-- /.single-testimonial -->
 				</div>
+				<?php endforeach; ?>
+			<?php endif; ?>
+
 				<div class="col-lg-4 col-md-4 col-sm-6 hvr-float-shadow">
 					<!-- .single-testimonial -->
 					<div class="single-testimonial  hvr-bounce-to-bottom">
