@@ -37,7 +37,7 @@ switch ($view) {
 		## Выводим отзывы (testimonial)
 		$float = Float_testimonials();
 		$testimonials = Testimonials();
-		$testimonials = array_merge($float, $testimonials);
+
 
 	break;
 

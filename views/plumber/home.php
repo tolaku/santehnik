@@ -320,45 +320,24 @@
 			<div class="row">
 			<?php if($testimonials == true): ## выводим что говорят клиенты ?>
 				<?php foreach($testimonials as $testimonial): ?>
-				<div class="col-lg-4 col-md-4 col-sm-6 wow bounceInLeft hvr-float-shadow">
+					
+				<div class="col-lg-4 col-md-4 col-sm-6 <?php print_arr($testimonial)?>">
 					<!-- .single-testimonial -->
 					<div class="single-testimonial  hvr-bounce-to-bottom">
 						<div class="profile-info pull-left">
-							<img src="<?=TEMPLATE?>img/testimonial/1.jpg" alt="">
-							<h2>merry Smith</h2>
+							<img src="<?=TEMPLATE?>img/testimonial/<?=$testimonial['img']?>" alt="">
+							<h2><?=$testimonial['name']?></h2>
 						</div>
 						<div class="content pull-left">
-							<p><i class="fa fa-quote-left"></i> Sed ut perspiciatis unde omnis iste natus er aer or sit voluptatem acc all santium doloremqe laudantium totam.</p>
+							<p><i class="fa fa-quote-left"></i> <?=$testimonial['snipet']?></p>
 						</div>
 					</div> <!-- /.single-testimonial -->
 				</div>
+					
 				<?php endforeach; ?>
 			<?php endif; ?>
 
-				<div class="col-lg-4 col-md-4 col-sm-6 hvr-float-shadow">
-					<!-- .single-testimonial -->
-					<div class="single-testimonial  hvr-bounce-to-bottom">
-						<div class="profile-info pull-left">
-							<img src="<?=TEMPLATE?>img/testimonial/2.jpg" alt="">
-							<h2>Анатолий</h2>
-						</div>
-						<div class="content pull-left ">
-							<p><i class="fa fa-quote-left"></i> Наша семья, осталось очень довольна работой сантехника Константина, поразила скорость и качество. Благодарим Вас за работу. т.(44) 532-36-04</p>
-						</div>
-					</div> <!-- /.single-testimonial -->
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6 col-lg-offset-0 col-md-offset-0 col-sm-offset-3 wow bounceInRight hvr-float-shadow">
-					<!-- .single-testimonial -->
-					<div class="single-testimonial  hvr-bounce-to-bottom">
-						<div class="profile-info pull-left">
-							<img src="<?=TEMPLATE?>img/testimonial/3.jpg" alt="">
-							<h2>merry Smith</h2>
-						</div>
-						<div class="content pull-left">
-							<p><i class="fa fa-quote-left"></i> Sed ut perspiciatis unde omnis iste natus er aer or sit voluptatem acc all santium doloremqe laudantium totam.</p>
-						</div>
-					</div> <!-- /.single-testimonial -->
-				</div>
+
 			</div>
 		</div>
 	</section>	<!-- /#testimonials -->
