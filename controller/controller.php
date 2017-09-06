@@ -35,7 +35,6 @@ switch ($view) {
 		$specialists = Specialists();
 
 		## Выводим отзывы (testimonial)
-		$float = Float_testimonials();
 		$testimonials = Testimonials();
 
 

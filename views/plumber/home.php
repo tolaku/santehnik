@@ -321,7 +321,7 @@
 			<?php if($testimonials == true): ## выводим что говорят клиенты ?>
 				<?php foreach($testimonials as $testimonial): ?>
 					
-				<div class="col-lg-4 col-md-4 col-sm-6 <?php print_arr($testimonial)?>">
+				<div class="col-lg-4 col-md-4 col-sm-6 <?=$testimonial['float']?>">
 					<!-- .single-testimonial -->
 					<div class="single-testimonial  hvr-bounce-to-bottom">
 						<div class="profile-info pull-left">

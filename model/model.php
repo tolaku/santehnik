@@ -118,11 +118,9 @@ function Testimonials(){
 	$result = mysqli_query($db, $query);
 
 	$testimonials = array();
-	$value['fl'] = array('wow bounceInLeft hvr-float-shadow', 'hvr-float-shadow', 'col-lg-offset-0 col-md-offset-0 col-sm-offset-3 wow bounceInRight hvr-float-shadow');
 
 	while($row = mysqli_fetch_assoc($result)){
-		$testimonials[] = array_merge($row, $value['fl']); 
-
+		$testimonials[] = $row; 
 	}
 	return $testimonials;
 }
