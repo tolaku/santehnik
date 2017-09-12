@@ -13,6 +13,10 @@ $view = empty($_GET['view']) ? 'home' : $_GET['view'];
 // выводим навигацию
 $page = pages();
 
+// обрабатываем телефон для вывода header (оставить только цифры)
+$strHeaderTelefon = constants('header_telefon');
+$strWithoutLatin = preg_replace('/[^0-9]/', '', $strHeaderTelefon);
+
 // проверяем на какой странице мы находимся через $view
 switch ($view) {
 	case ('home'):

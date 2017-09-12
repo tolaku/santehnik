@@ -1,5 +1,5 @@
 <?php defined('PLUMBER') or die('Разве хорошо воровать?');?>
-<?php print_arr($testimonials) ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,13 @@
 				<div class="contact-info pull-right">
 					<ul>
 					<!-- Выводим телефон и email -->
-					<?=constants('heder_telefon'); ?>
+					<!-- 
+						<li><a href="tel:+375444540444" class="hvr-bounce-to-bottom"><i class="fa fa-phone"></i> (44) 454-04-44 </a></li>
+						<li><a href="mailto:santehkostya@mail.ru" class="hvr-bounce-to-bottom"><i class="fa fa-envelope-o"></i> santehkostya@mail.ru</a></li> 
+					-->
+					
+					<li><a href="tel:+<?=$strWithoutLatin?>" class="hvr-bounce-to-bottom"><i class="fa fa-phone"></i> <?=constants('header_telefon'); ?> </a></li>
+					<li><a href="mailto:<?=constants('header_mail'); ?>" class="hvr-bounce-to-bottom"><i class="fa fa-envelope-o"></i> <?=constants('header_mail'); ?></a></li>
 					</ul>
 				</div> <!-- /.contact-info -->
 			</div>
