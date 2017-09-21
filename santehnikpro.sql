@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 19 2017 г., 18:01
+-- Время создания: Сен 21 2017 г., 17:55
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -32,16 +32,18 @@ CREATE TABLE IF NOT EXISTS `constants` (
   `name` varchar(255) NOT NULL,
   `text` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `constants`
 --
 
 INSERT INTO `constants` (`id`, `title`, `name`, `text`) VALUES
-(1, 'В шапке телефон и email', 'heder_telefon', '<li><a href="tel:+375444540444" class="hvr-bounce-to-bottom"><i class="fa fa-phone"></i> (44) 454-04-44 </a></li>\n						<li><a href="mailto:santehkostya@mail.ru" class="hvr-bounce-to-bottom"><i class="fa fa-envelope-o"></i> santehkostya@mail.ru</a></li>'),
+(1, 'В шапке телефон', 'header_telefon', '+375 (44) 454-04-44'),
 (2, 'Звоните нам и мы..', 'promotional_text', '<p>Звоните нам и мы оперативно решим вашу сантехнику <b>в любое для вас время.</b></p>'),
-(3, 'Услуги которые мы предлагаем', 'uslugi_name', '<h1>Услуги которые мы предлагаем</h1>');
+(3, 'Услуги которые мы предлагаем', 'uslugi_name', '<h1>Услуги которые мы предлагаем</h1>'),
+(4, 'В шапке email', 'header_mail', 'santehkostya@mail.ru'),
+(6, 'Аварийная утечка', 'emergency', '<h2>Аварийная утечка &amp; <span>Лопнула труба</span></h2>');
 
 -- --------------------------------------------------------
 
@@ -186,6 +188,7 @@ CREATE TABLE IF NOT EXISTS `testimonials` (
   `name` varchar(255) DEFAULT NULL,
   `snipet` varchar(255) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
+  `float` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
@@ -193,10 +196,10 @@ CREATE TABLE IF NOT EXISTS `testimonials` (
 -- Дамп данных таблицы `testimonials`
 --
 
-INSERT INTO `testimonials` (`id`, `name`, `snipet`, `img`) VALUES
-(1, 'merry Smith', 'Sed ut perspiciatis unde omnis iste natus er aer or sit voluptatem acc all santium doloremqe laudantium totam.', '1.jpg'),
-(2, 'Анатолий', 'Наша семья, осталось очень довольна работой сантехника Константина, поразила скорость и качество. Благодарим Вас за работу. т.(44) 532-36-04', '2.jpg'),
-(3, 'merry Smith', 'Sed ut perspiciatis unde omnis iste natus er aer or sit voluptatem acc all santium doloremqe laudantium totam.', '3.jpg');
+INSERT INTO `testimonials` (`id`, `name`, `snipet`, `img`, `float`) VALUES
+(1, 'merry Smith', 'Sed ut perspiciatis unde omnis iste natus er aer or sit voluptatem acc all santium doloremqe laudantium totam.', '1.jpg', 'wow bounceInLeft hvr-float-shadow'),
+(2, 'Анатолий', 'Наша семья, осталось очень довольна работой сантехника Константина, поразила скорость и качество. Благодарим Вас за работу. т.(44) 532-36-04', '2.jpg', 'hvr-float-shadow'),
+(3, 'merry Smith', 'Sed ut perspiciatis unde omnis iste natus er aer or sit voluptatem acc all santium doloremqe laudantium totam.', '3.jpg', 'col-lg-offset-0 col-md-offset-0 col-sm-offset-3 wow bounceInRight hvr-float-shadow');
 
 -- --------------------------------------------------------
 
