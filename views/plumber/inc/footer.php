@@ -9,10 +9,15 @@
 					<nav class="footer-menu">
 						<button class="footer-nav-toggler hvr-bounce-to-right">Нижнее меню <i class="fa fa-bars"></i></button>
 						<ul>
-							<li><a href="/">Главная</a></li>
-							<li><a href="?view=about">О нас</a></li>
-							<li><a href="?view=project">Услуги</a></li>
-							<li><a href="?view=contact">Контакты</a></li>
+
+							<!-- Выводим навигацию -->
+						<?php foreach($page as $key => $item): ?>
+							<?php if(count($item) >= 2): ?> 
+								<li><a href="?view=<?=$item[1]?>"><?=$item[0]?></a></li>
+							<?php endif; ?>
+							
+						<?php endforeach; ?>
+
 						</ul>
 					</nav>
 				</div>
@@ -53,8 +58,8 @@
 					<h3>Контакты</h3>
 					<ul class="contact-info">
 						<li><i class="fa fa-map-marker"></i> Беларусь, г. Пинск <br>Брестская - Минская обл. и другие города</li>
-						<li><i class="fa fa-phone"></i> +375 (44) 454-04-44</li>
-						<li><i class="fa fa-envelope-o"></i> santehkostya@mail.ru</li>
+						<li><i class="fa fa-phone"></i> <?=constants('header_telefon'); ?></li>
+						<li><i class="fa fa-envelope-o"></i> <?=constants('header_mail'); ?></li>
 						<li><i class="fa fa-globe"></i> http://santehnikpro.by</li>
 					</ul>
 				</div> <!-- /.widget -->
