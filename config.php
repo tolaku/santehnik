@@ -4,6 +4,9 @@ defined('PLUMBER') or die('Разве хорошо воровать?');
 // адрес нашего сайта
 define('PATH', 'http://santehnikpro.loc/');
 
+// адрес административной части нашего сайта
+define('ADMIN', PATH.'admin/');
+
 // константа которая будет ссылатся на model
 define('MODEL', 'model/model.php');
 
@@ -15,6 +18,9 @@ define('VIEW', 'views/');
 
 // шаблон самого сайта
 define('TEMPLATE', VIEW.'plumber/');
+
+// шаблон административной части сайта
+define('TEMPLATE_ADMIN', ADMIN.'templates/');
 
 
 // подключение к базе данных

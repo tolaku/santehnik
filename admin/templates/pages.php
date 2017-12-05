@@ -1,4 +1,4 @@
-<?php defined('ISHOP') or die('Access denied'); ?>
+<?php defined('PLUMBER') or die('Закрыт доступ'); ?>
 <div class="content">
 			<h2>Список страниц</h2>
 			<a href="#"><img class="add_some" src="<?=ADMIN_TEMPLATE?>images/add_page.jpg" alt="добавить страницу" /></a>

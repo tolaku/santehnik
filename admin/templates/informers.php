@@ -1,4 +1,4 @@
-<?php defined('ISHOP') or die('Access denied'); ?>
+<?php defined('PLUMBER') or die('Access denied'); ?>
 <div class="content">
 			<h2>Информеры</h2>
 			<a href="#"><img class="add_some" src="<?=ADMIN_TEMPLATE?>images/add_page.jpg" alt="добавить страницу" /></a>

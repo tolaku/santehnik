@@ -1,4 +1,4 @@
-<?php defined('ISHOP') or die('Access denied'); ?>
+<?php defined('PLUMBER') or die('Закрыт доступ'); ?>
 	<div class="content-main">
 		<div class="leftBar">
 			<ul class="nav-left">
