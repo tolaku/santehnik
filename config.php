@@ -2,10 +2,10 @@
 defined('PLUMBER') or die('Разве хорошо воровать?');
 
 // адрес нашего сайта
-define('PATH', 'http://santehnikpro.loc/');
+define('PATH', 'http://santehnik/');
 
 // адрес административной части нашего сайта
-define('ADMIN', PATH.'admin/');
+define('ADMIN', '../admin/');
 
 // константа которая будет ссылатся на model
 define('MODEL', 'model/model.php');
