@@ -1,7 +1,7 @@
 <?php defined('PLUMBER') or die('Закрыт доступ'); ?>
 <div class="content">
 			<h2>Список страниц</h2>
-			<a href="#"><img class="add_some" src="<?=ADMIN_TEMPLATE?>images/add_page.jpg" alt="добавить страницу" /></a>
+			<a href="#"><img class="add_some" src="<?=TEMPLATE_ADMIN?>images/add_page.jpg" alt="добавить страницу" /></a>
 			<table class="tabl" cellspacing="1">
 			  <tr>
 				<th class="number">№</th>
@@ -40,7 +40,7 @@
 				<td><a href="#" class="edit">изменить</a>&nbsp; | &nbsp;<a href="#" class="del">удалить</a></td>
 			  </tr>
 			</table>
-			<a href="#"><img class="add_some" src="<?=ADMIN_TEMPLATE?>images/add_page.jpg" alt="добавить страницу" /></a>
+			<a href="#"><img class="add_some" src="<?=TEMPLATE_ADMIN?>images/add_page.jpg" alt="добавить страницу" /></a>
 
 		</div> <!-- .content -->
 	</div> <!-- .content-main -->

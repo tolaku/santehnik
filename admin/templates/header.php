@@ -4,13 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="<?=ADMIN_TEMPLATE?>style.css" />
+<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ADMIN?>style.css" />
 <title>Список страниц</title>
 </head>
 
 <body>
 <div class="karkas">
 	<div class="head">
-		<a href="#"><img src="<?=ADMIN_TEMPLATE?>images/logoAdm.jpg" /></a>
+		<a href="#"><img src="<?=TEMPLATE_ADMIN?>images/logoAdm.jpg" /></a>
 		<p><a href="#">Admin</a> | <a href="#"><strong>Выйти</strong></a></p>
 	</div> <!-- .head -->
