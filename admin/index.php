@@ -5,6 +5,15 @@ define('PLUMBER', TRUE);
 // подключение файла конфигураций
 require_once '../config.php';
 
+// подключаем файл функций пользовательской части
+require_once '../functions/functions.php';
+
+// подключаем файл функции административной части
+require_once 'functions/functions.php';
+
+// получаем массив меню
+$page = pages();
+
 // подключаем динамическую часть шаблона #content
 $view = empty($_GET['view']) ? 'pages' : $_GET['view'];
 
