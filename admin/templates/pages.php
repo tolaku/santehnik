@@ -1,5 +1,6 @@
 <?php defined('PLUMBER') or die('Закрыт доступ'); ?>
-<div class="content">
+<?php print_arr($page); ?>
+		<div class="content">
 			<h2>Список страниц</h2>
 			<a href="#"><img class="add_some" src="<?=TEMPLATE_ADMIN?>images/add_page.jpg" alt="добавить страницу" /></a>
 			<table class="tabl" cellspacing="1">
@@ -9,6 +10,15 @@
 				<th class="str_sort">Сортировка</th>
 				<th class="str_action">Действие</th>
 			  </tr>
+
+			   <?php foreach($page as $key => $item): // выводим разделы?>
+				  <tr>
+					<td>1</td>
+					<td class="name_page"><?=$item['name']?></td>
+					<td>1</td>
+					<td><a href="#" class="edit">изменить</a>&nbsp; | &nbsp;<a href="#" class="del">удалить</a></td>
+				  </tr>
+			  <?php endforeach; ?>
 			  <tr>
 				<td>1</td>
 				<td class="name_page">Оплата и доставка</td>

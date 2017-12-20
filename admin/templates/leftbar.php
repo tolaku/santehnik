@@ -5,11 +5,11 @@
 				<!-- Выводим навигацию -->
 						<?php foreach($page as $key => $item): ?>
 							<?php if(count($item) == 2): ?> <!-- <li class="current"> -->
-								<li><a href="?view=<?=$item[1]?>" class="hvr-overline-from-left"><?=$item[0]?></a></li>
+								<li><a href="?view=<?=$item[1]?>" class="hvr-overline-from-left"><?=$item['name']?></a></li>
 							<?php endif; ?>
 							<?php if(count($item) > 2): ?>
 							<li>
-								<a href="?view=<?=$item[1]?>" class="hvr-overline-from-left"><?=$item[0]?></a>
+								<a href="?view=<?=$item[1]?>" class="hvr-overline-from-left"><?=$item['name']?></a>
 								<ul class="submenu">
 								<?php foreach($item['sub'] as $key => $sub): ?>
 									<li><a href="?view=uslugi&amp;id=<?=$key?>"><?=$sub?></a></li>
