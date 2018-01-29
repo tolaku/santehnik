@@ -22,8 +22,16 @@ switch($view){
 	// страницы
 	break;
 
+	/* главная страница */
 	case('home'):
-	// главная страница
+	// выводим слайдер
+	$slider = slider();
+	break;
+
+	/* редактирование слайдера */
+	case('edit_slider'):
+		$id = (int)$_GET['id'];
+		$get_slider = get_slider($id);
 	break;
 
 	default:

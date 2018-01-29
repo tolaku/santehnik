@@ -19,4 +19,23 @@ function pages(){
 	return $page;
 }
 
+/* выводим имена слайдеров */
+function slider(){
+	global $db;
+	$query = "SELECT name FROM slider_home";
+	$result = mysqli_query($db, $query);
+
+	$slider = array();
+	while($row = mysqli_fetch_assoc($result)){
+		$slider[] = $row;
+	}
+	return $slider;
+}
+/* :выводим имена слайдеров */
+
+/* выводим данные слайдера по ID */
+function get_slider($id){
+	
+}
+/* :выводим данные слайдера по ID */
 ?>
