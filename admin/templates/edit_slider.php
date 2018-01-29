@@ -1,16 +1,16 @@
 <?php defined('PLUMBER') or die('Закрыт доступ'); ?>
-<?php //print_arr($slider); ?>
+<?php print_arr($get_slider); ?>
 		<div class="content">
 			<h2>Редактируем слайдер</h2>
 			<form action="" method="post">
 			  <label for="name">Название:</label><br />
-			  <input type="text" name="name" value=""><br />
+			  <input type="text" name="name" value="<?=$get_slider['name']?>"><br />
 			  <label for="img">Фото:</label><br />
-			  <input type="text" name="img"><br /><br />
+			  <input type="text" name="img" value="<?=$get_slider['img']?>"><br /><br />
 			  <label>Загаловки:</label><br />
-			  <input type="text" name="h1"><br /><br />
+			  <input type="text" name="h1" value="<?=$get_slider['h1']?>"><br /><br />
 			  <label>Текст:</label><br />
-			  <textarea></textarea>
+			  <textarea><?=$get_slider['text']?></textarea>
 			</form>
 			
 <br><br>

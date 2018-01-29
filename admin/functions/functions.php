@@ -22,7 +22,7 @@ function pages(){
 /* выводим имена слайдеров */
 function slider(){
 	global $db;
-	$query = "SELECT name FROM slider_home";
+	$query = "SELECT id, name FROM slider_home";
 	$result = mysqli_query($db, $query);
 
 	$slider = array();
@@ -35,7 +35,12 @@ function slider(){
 
 /* выводим данные слайдера по ID */
 function get_slider($id){
-	
+	global $db;
+	$query = "SELECT * FROM slider_home WHERE id = $id";
+	$result = mysqli_query($db, $query);
+
+	$get_slider = mysqli_fetch_assoc($result);
+	return $get_slider;
 }
 /* :выводим данные слайдера по ID */
 ?>
